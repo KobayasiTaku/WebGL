@@ -60,7 +60,7 @@
         //var material = new THREE.MeshNormalMaterial({ color: 0x000000 });
         //var material = new THREE.MeshLambertMaterial({ color: 0x0000ff });
         //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff, specular:0xffff00, shininess:4 });
-        var material = new THREE.MeshPhongMaterial({ color: 0x0000ff, emissive: 0xffff00, emissiveIntensity: 2 });
+        //var material = new THREE.MeshPhongMaterial({ color: 0x0000ff, emissive: 0xffff00, emissiveIntensity: 2 });
         //var material = new THREE.MeshToonMaterial({ color: 0x005555 });
         //var material = new THREE.MeshStandardMaterial({ color: 0x0005555 });
 
@@ -139,11 +139,23 @@
         pengin.add(r_eye); //右目
         pengin.position.set(0,1,0);//ペンギングループの原点の位置
         scene.add(pengin);*/
+        
+        //持ち手
+        var motite_g = new THREE.CylinderGeometry( 0.2, 0.2, 4, 32 );
+        var material_m = new THREE.MeshLambertMaterial({ color: 0xC9CACA });
+        var motite = new THREE.Mesh( motite_g, material_m);
+        motite.rotation.z = 1.57;
+        motite.position.set(0,2,0);
 
+        //ダンベルのオブジェクト
+        const danberu = new THREE.Group();
+        danberu.add(motite); // 持ち手を追加
+        danberu.position.set(0,0,0);
+        
         //全体のオブジェクト
         const all = new THREE.Group();
         all.add(plane);//平面を追加
-        //all.add(pengin); // ペンギンを追加
+        all.add(danberu); // ダンベルを追加
         all.position.set(0,0,0);//全体グループの原点の位置
         scene.add(all); 
 
