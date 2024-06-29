@@ -151,13 +151,13 @@
         var omori_g = new THREE.CylinderGeometry( 1, 1, 0.5, 32 );
         var material_o = new THREE.MeshLambertMaterial({ color: 0xC1AB05 });
         var omori = new THREE.Mesh( omori_g, material_o);
-        motite.rotation.z = 1.57;
-        motite.position.set(1.5,1,0);
+        omori.rotation.z = 1.57;
+        omori.position.set(1.5,1,0);
 
         //おもり２
         var omori2 = new THREE.Mesh( omori_g, material_o);
         omori2.rotation.z = 1.57;
-        motite.position.set(-1.5,1,0);
+        omori2.position.set(-1.5,1,0);
         
         //ダンベルのオブジェクト
         const danberu = new THREE.Group();
