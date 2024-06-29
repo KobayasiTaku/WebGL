@@ -47,7 +47,7 @@
         var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         plane.rotation.set( -Math.PI/2, 0, 0 );
-        plane.position.set(0,0,0);
+        plane.position.set(0,-2,0);
         scene.add(plane);
 
         
@@ -57,19 +57,19 @@
         var material_m = new THREE.MeshLambertMaterial({ color: 0xC9CACA });
         var motite = new THREE.Mesh( motite_g, material_m);
         motite.rotation.z = 1.57;
-        motite.position.set(0,3,0);
+        motite.position.set(0,1,0);
         
         //おもり１
         var omori_g = new THREE.CylinderGeometry( 1, 1, 0.5, 32 );
         var material_o = new THREE.MeshLambertMaterial({ color: 0xC1AB05 });
         var omori = new THREE.Mesh( omori_g, material_o);
         omori.rotation.z = 1.57;
-        omori.position.set(1.5,3,0);
+        omori.position.set(1.5,1,0);
 
         //おもり２
         var omori2 = new THREE.Mesh( omori_g, material_o);
         omori2.rotation.z = 1.57;
-        omori2.position.set(-1.5,3,0);
+        omori2.position.set(-1.5,1,0);
         
         //ダンベルのオブジェクト
         const danberu = new THREE.Group();
